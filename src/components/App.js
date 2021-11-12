@@ -16,11 +16,16 @@ class App extends Component {
     wind: "",
     err: false,
   };
+  handleInputChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <Form />
+        <Form value={this.state.value} change={this.handleInputChange} />
         <Result />
       </div>
     );
